@@ -10,7 +10,7 @@ public interface Service {
 
     long createStudent(Student student);
     void updateStudentCourse(long id,String course);
-    void deleteStudent();
+    void deleteStudentById(long id);
     List<Student> getAllStudent();
-    void getStudentById();
+    Student getStudentById(long id);
 }

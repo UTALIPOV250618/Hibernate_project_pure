@@ -1,6 +1,7 @@
 package peaksoft.service;
 
 import org.hibernate.Session;
+import org.hibernate.stat.SessionStatistics;
 import peaksoft.entity.Student;
 import peaksoft.util.HibernateConf;
 
@@ -36,7 +37,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void deleteStudent() {
+    public void deleteStudentById(long id) {
+        Session session = HibernateConf.getSession().openSession();
+        session.beginTransaction();
+        Student student = session.get(Student.class,id);
+        session.delete(student);
+        session.getTransaction().commit();
+        session.close();
+        System.out.println("Selected student deleted successfully "+ student);
 
     }
 
@@ -60,7 +68,14 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public void getStudentById() {
+    public Student getStudentById(long id) {
+        Session session = HibernateConf.getSession().openSession();
+        session.beginTransaction();
+        Student student  = session.get(Student.class,id);
+        session.getTransaction().commit();
+        session.close();
+        System.out.println(student);
+        return student;
 
     }
 }

@@ -25,7 +25,7 @@ public class HibernateConf {
                 properties.put(Environment.DRIVER, "org.postgresql.Driver");
                 properties.put(Environment.URL, "jdbc:postgresql://localhost:5432/postgres");
                 properties.put(Environment.USER, "postgres");
-                properties.put(Environment.PASS, "postgres");
+                properties.put(Environment.PASS, "google224");
                 properties.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL9Dialect");
                 properties.put(Environment.SHOW_SQL, "true");
                 properties.put(Environment.HBM2DDL_AUTO, "update");
